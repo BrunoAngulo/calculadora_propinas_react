@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+Descripción del Proyecto: Calculadora de Propinas y Consumo
+Descripción General
+La Calculadora de Propinas y Consumo es una aplicación web moderna y eficiente diseñada para ayudar a los usuarios a calcular rápidamente el monto de las propinas y el costo total de su consumo en establecimientos de servicios. Esta aplicación ha sido desarrollada utilizando tecnologías avanzadas y prácticas de desarrollo para asegurar una excelente experiencia de usuario y un rendimiento óptimo.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tecnologías Utilizadas
+React: La biblioteca principal utilizada para construir la interfaz de usuario.
+Vite: Un empaquetador de módulos rápido y eficiente que mejora significativamente los tiempos de desarrollo y construcción.
+Tailwind CSS: Una potente biblioteca de utilidades CSS que permite un diseño estilizado y responsivo sin necesidad de escribir CSS personalizado desde cero.
+Características Clave
+Cálculo de Propinas y Consumo:
 
-Currently, two official plugins are available:
+Permite a los usuarios ingresar el monto total de la factura y el porcentaje de propina deseado.
+Calcula automáticamente la cantidad de la propina y el monto total a pagar.
+Interfaz de Usuario Amigable:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Diseño limpio y moderno utilizando Tailwind CSS.
+Interfaz intuitiva que facilita la entrada de datos y la visualización de resultados.
+Custom Hooks:
 
-## Expanding the ESLint configuration
+Implementación de hooks personalizados para gestionar el estado y la lógica de la calculadora, mejorando la modularidad y la reutilización del código.
+Optimización del Rendimiento:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Utilización de React.memo para evitar renderizados innecesarios de componentes, mejorando la eficiencia de la aplicación.
+Uso de useMemo para memorizar valores calculados, reduciendo el costo de cálculos repetitivos y mejorando el rendimiento general de la aplicación.
+Ejemplo de Uso
+El usuario ingresa el monto total de la factura.
+El usuario selecciona o ingresa el porcentaje de propina deseado.
+La calculadora muestra automáticamente la cantidad de la propina y el total a pagar.
