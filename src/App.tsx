@@ -1,6 +1,12 @@
-import { menuItems } from './data/db';
+import MenuItem from "./components/MenuItem";
+import { menuItems } from "./data/db";
+import useOrder from './hooks/useOrder';
+import OrderContents from './components/OrderContents';
+import OrderTotals from "./components/OrderTotals";
+import TipPercentageForm from "./components/TipPercentageForm";
 function App() {
-  console.log(menuItems);
+  const { order, addItem, removeItem, tip, setTip, placeOrder } = useOrder();
+
   return (
     <>
       <header className="bg-teal-400 py-5">
@@ -8,6 +14,31 @@ function App() {
           Calculadora de Propinas y consumo
         </h1>
       </header>
+      <main className="max-w-5xl mx-auto py-20 grid grid-cols-1 md:grid-cols-2">
+        <div className="p-5">
+          <h2 className="text-4xl font-bold">Menú</h2>
+          <div className="space-y-3 mt-10">
+            {menuItems.map(item => (
+              <MenuItem key={item.id} item={item} addItem={addItem} />
+            ))}
+          </div>
+        </div>
+        <div className="">
+          <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
+            {order.length ? (
+              <>
+                <OrderContents order={order} removeItem={removeItem} />
+                <TipPercentageForm setTip={setTip} tip={tip} />
+                <OrderTotals order={order} tip={tip} placeOrder={placeOrder} />
+              </>
+            ) : (
+              <p className='text-center'>La orden esta vacía</p>
+            )}
+
+          </div>
+
+        </div>
+      </main>
     </>
   );
 }
